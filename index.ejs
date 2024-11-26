@@ -1,0 +1,31 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferencing App - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Header -->
+        <header id="header">
+            <h1>Welcome to UniHub</h1>
+            <p>Join or Create a Meeting</p>
+        </header>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <!-- Join/Create Meeting Form -->
+            <div id="meeting-form">
+                <input type="text" id="room-id" placeholder="Enter Room ID" />
+                <button id="join-room-button">Join Meeting</button>
+                <button id="create-room-button">Create Meeting</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
