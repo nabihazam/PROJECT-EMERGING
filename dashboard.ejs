@@ -1,0 +1,41 @@
+<!-- dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Meeting</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Welcome to UniHub</h1>
+        <p>Enter the Room ID to join or create a new room.</p>
+
+        <form id="join-form">
+            <input type="text" id="name" placeholder="Enter your name" required />
+            <input type="text" id="room-id" placeholder="Enter Room ID" required />
+            <button type="submit">Join Meeting</button>
+            <button id="create-room-button">Create Meeting</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('join-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const roomId = document.getElementById('room-id').value;
+            if (name && roomId) {
+                window.location.href = `/room/${roomId}?name=${name}`;
+            }
+        });
+
+        document.getElementById('create-room-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const roomId = Math.floor(Math.random() * 10000);  // Generate a random room ID
+            const name = document.getElementById('name').value;
+            window.location.href = `/room/${roomId}?name=${name}`;
+        });
+    </script>
+</body>
+</html>
